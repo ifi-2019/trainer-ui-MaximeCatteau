@@ -15,9 +15,12 @@
                 <div class="card-header">
                     <h4 class="my-0 font-weight-normal">{{name}}</h4>
                     Team :<br />
-                    {{#team}}
-                    <span>{{this.pokemonType}} niveau {{this.level}}<br /></span>
-                    {{/team}}
+                    <span>
+                    {{#realTeam}}
+                        <img class="card-img-top" src="{{#sprites}}{{front_default}}{{/sprites}}" alt="Pokemon"/>
+                        {{this.name}} niveau {{this.level}}
+                    {{/realTeam}}<br />
+                    </span>
                 </div>
             </div>
         </div>

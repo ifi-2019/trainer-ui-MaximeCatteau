@@ -12,6 +12,7 @@ public class PokemonType {
     private Stats stats;
     private int weight;
     private List<String> types;
+    private int level;
 
     public List<String> getTypes() {
         return types;
@@ -75,5 +76,13 @@ public class PokemonType {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getLevel(){
+        return level;
+    }
+
+    public void setLevel(int level){
+        this.level = level;
     }
 }
