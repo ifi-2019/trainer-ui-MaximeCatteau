@@ -1,8 +1,6 @@
 package com.ifi.trainer_ui.trainers.service;
 
 import com.ifi.trainer_ui.pokemonTypes.bo.PokemonType;
-import com.ifi.trainer_ui.pokemonTypes.service.PokemonTypeService;
-import com.ifi.trainer_ui.pokemonTypes.service.PokemonTypeServiceImpl;
 import com.ifi.trainer_ui.trainers.bo.Pokemon;
 import com.ifi.trainer_ui.trainers.bo.Trainer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,6 +47,15 @@ public class TrainerServiceImpl implements TrainerService {
                 result = t;
             }
         }
+
+        return result;
+    }
+
+    @Override
+    public List<Trainer> getAllTrainers(){
+        Trainer[] trainers = restTemplate.getForObject(trainerServiceUrl, Trainer[].class);
+
+        List<Trainer> result = Arrays.asList(trainers);
 
         return result;
     }

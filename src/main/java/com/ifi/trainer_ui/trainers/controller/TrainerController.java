@@ -1,7 +1,5 @@
 package com.ifi.trainer_ui.trainers.controller;
 
-import com.ifi.trainer_ui.pokemonTypes.bo.PokemonType;
-import com.ifi.trainer_ui.pokemonTypes.service.PokemonTypeService;
 import com.ifi.trainer_ui.trainers.service.TrainerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +18,14 @@ public class TrainerController {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("trainers");
         mav.addObject("trainers", trainerService.listTrainers());
+        return mav;
+    }
+
+    @GetMapping(value = "/profile")
+    public ModelAndView profile(){
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("profile");
+        mav.addObject("otherTrainers", trainerService.listTrainers());
         return mav;
     }
 

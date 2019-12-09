@@ -8,4 +8,5 @@ import java.util.List;
 public interface TrainerService {
     public List<Trainer> listTrainers();
     Trainer getTrainer(String name);
+    public List<Trainer> getAllTrainers();
 }
