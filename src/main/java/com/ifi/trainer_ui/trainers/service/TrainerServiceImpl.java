@@ -39,6 +39,20 @@ public class TrainerServiceImpl implements TrainerService {
         return Arrays.asList(pokemons);
     }
 
+    @Override
+    public Trainer getTrainer(String name) {
+        Trainer[] trainers = restTemplate.getForObject(trainerServiceUrl, Trainer[].class);
+        Trainer result = null;
+
+        for(Trainer t : trainers){
+            if(t.getName().equals(name)){
+                result = t;
+            }
+        }
+
+        return result;
+    }
+
     @Autowired
     @Qualifier("trainerApiRestTemplate")
     public void setRestTemplate(RestTemplate restTemplate){
