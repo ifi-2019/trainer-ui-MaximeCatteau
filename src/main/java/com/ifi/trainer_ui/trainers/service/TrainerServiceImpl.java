@@ -6,6 +6,7 @@ import com.ifi.trainer_ui.pokemonTypes.service.PokemonTypeServiceImpl;
 import com.ifi.trainer_ui.trainers.bo.Pokemon;
 import com.ifi.trainer_ui.trainers.bo.Trainer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -39,6 +40,7 @@ public class TrainerServiceImpl implements TrainerService {
     }
 
     @Autowired
+    @Qualifier("trainerApiRestTemplate")
     public void setRestTemplate(RestTemplate restTemplate){
         this.restTemplate = restTemplate;
     }
